@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計算機</title>
+  <style>
+    .main{
+      margin: 100px auto;
+      width: 500px;
+      height: 100px;
+      text-align: center;
+      color: darkblue;
+    }
+    .line{
+      border-color: darkblue;
+    }
+    input{
+      border-color: darkblue;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="main">   
+      <fieldset class="line">
+      <legend><h2>計算機</h2></legend>
+      <input type="text" id="n1" size="10" value="10">
+      <input type="text" id="op" size="3" value="+">
+      <input type="text" id="n2" size="10"value="10">
+      <button onclick="calculate()">=</button>
+      <input type="text" size="10"id="result">
+      </fieldset>
+    </div>
+  
+
+
+  <script>
+    function calculate(){
+    var s1 = document.getElementById("n1").value
+    var op = document.getElementById("op").value
+    var s2 = document.getElementById("n2").value
+    var n1 = parseInt(s1)
+    var n2 = parseInt(s2)
+    var n3
+  
+
+    switch(op){
+      case '+':
+        n3 = n1 + n2
+        break;
+      case '-':
+        n3 = n1 - n2
+        break;
+      case 'x':
+      case '*':
+        n3 = n1 * n2
+        break;
+      case '/':
+        n3 = n1 / n2 
+        break;
+      default:
+        n3 = '運算無效'
+    }
+    document.getElementById("result").value = n3
+  }
+  </script>
+</body>
+</html>
